@@ -17,7 +17,7 @@ func worker(ctx context.Context, wg *sync.WaitGroup) {
 
 	for {
 		select {
-		// когда мы в main() отменим наш контекс, то ctx.Done() вернёт закрытый канал
+		// когда мы в main() отменим наш контекст, то ctx.Done() вернёт закрытый канал
 		// чтение из закрытого канала - nil значение, следовательно проваливаемся в этот кейс и делаем return
 		case <-ctx.Done():
 			return
